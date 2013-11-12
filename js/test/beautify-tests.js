@@ -1734,6 +1734,8 @@ function run_beautifier_tests(test_obj, Urlencoded, js_beautify, html_beautify, 
         btc(".tabs{background:url('back.jpg')}", ".tabs {\n\tbackground: url('back.jpg')\n}\n");
         btc("#bla, #foo{color:red}", "#bla,\n#foo {\n\tcolor: red\n}\n");
         btc("@media print {.tab{}}", "@media print {\n\t.tab {}\n}\n");
+        btc("@import 'custom.css';.rule{}", "@import 'custom.css';\n.rule {}\n");
+        btc("@import url('bluish.css') projection,tv;.rule{}", "@import url('bluish.css') projection, tv;;\n.rule {}\n");
 
         // comments
         btc("/* test */", "/* test */\n");
